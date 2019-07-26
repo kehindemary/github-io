@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Orders Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script type="text/javascript" src = "validation.js"></script>
+    <script src="jquery/jquery.min.js"></script>
+    <script src="popper/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script> 
+</head>
+<style>
+.container{
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+    border: solid palevioletred;
+    border-radius: 5%;
+    background-color:antiquewhite;
+    padding: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+form{
+    margin-right: 25%;
+    margin-left: 25%;
+    width: 100%;
+}
+p{
+    padding: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    line-height: 0.1em;
+    margin: 5px;
+}
+</style>
+<body>
+        <div class="content" id="home">
+                <nav class="navbar navbar-expand-md navbar-light fixed-top">
+                    <img src="images/imgslides/logo.jpg" class="rounded-circle circle" width="150px" height="100px">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="orderpage.html">Orders<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="adminlogin.php">Admin</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contactus</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+        <div class="container">
+                <h1 class="text-center">Order Form</h1>
+                <form method="POST" id = "regForm" name="regForm" onsubmit = "return validateForm()" action = "order.php">
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="firstname" >
+                            <i class="fas fa-user"></i>
+                            </span>
+                            </div>     
+                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter your Firstname">
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="lastname" >
+                            <i class="fas fa-user"></i>
+                            </span>
+                            </div>     
+                            <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Enter your Lastname">
+                            </div>
+                            </div>
+                            </div>
+                                
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="email" >
+                            <i class="fas fa-envelope"></i>
+                            </span>
+                            </div>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>    
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-12 pb-2">
+                            <p>     
+                                <label for="gender">Gender:</label>
+                                <label for="male">Male:</label>
+                                <input type="radio" name="gender" value="male" id="male">
+                                <label for="female">Female:</label>
+                                <input type="radio" name="gender" value="female" id="female">
+                                </p>                            
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-3">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="phoneno" >
+                            <i class="fas fa-phone"></i>
+                            </span>
+                            </div>
+                            <input type="number" class="form-control" id="phoneno" name="phoneno" placeholder="Enter your Phone Number"> 
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="address1">
+                            <i class="fas fa-address-card"></i>                 
+                            </span>
+                            </div>
+                            <input type="text" class="form-control" id="address1" name="address1" placeholder="1234 Main St">
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-6">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="address2">
+                            <i class="fas fa-address-card"></i>                 
+                            </span>
+                            </div>
+                            <input type="text" class="form-control" id="address2" name="address2" placeholder="Nearest-Bustop">
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="form-group col-md-4">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="city">
+                            <i class="fas fa-address-card"></i>                 
+                            </span>
+                            </div> 
+                            <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                            </div>
+                            </div>
+                            <div class="form-group col-sm-2 my-1">
+                            <select id="state1" name="state1" class="form-control">
+                            <option value = "0" selected>Choose State ...</option>
+                            <option>Abia</option>
+                            <option> Adamawa</option>      
+                            <option>Akwa Ibom</option>
+                            <option> Anambra</option>
+                            <option>Bauchi</option>
+                            <option>Bayelsa</option>
+                            <option>Benue</option>
+                            <option>Borno</option>
+                            <option>Cross River</option>
+                            <option>Delta</option>       
+                            <option>Ebonyi</option>
+                            <option>Enugu</option>
+                            <option>Edo</option>        
+                            <option>Ekiti</option>
+                            <option> Gombe</option> 
+                            <option>Imo</option>
+                            <option>Jigawa</option>
+                            <option>Kaduna</option>
+                            <option>Kano</option>
+                            <option>Katsina</option>
+                            <option>Kebbi</option>
+                            <option>Kogi</option>
+                            <option>Kwara</option>
+                            <option>Lagos</option>
+                            <option>Nasarawa</option>        
+                            <option>Niger</option>
+                            <option>Ogun</option>
+                            <option>Ondo</option>
+                            <option>Osun</option> 
+                            <option>Oyo</option>
+                            <option>Plateau</option>
+                            <option>Rivers</option>
+                            <option>Sokoto</option>
+                            <option>Taraba</option>
+                            <option>Yobe</option>
+                            <option>Zamfara</option>
+                            <option>Fct</option> 
+                            </select>
+                            </div>
+                            </div>
+                            <div class="row">
+                            <div class="col-sm-4">
+                            <div class="input-group my-1">
+                            <div class="input-group-prepend">
+                            <span class="input-group-text" id="menu">
+                            <i class="fas fa-utensils"></i>
+                            </span>
+                            </div>
+                            <select id="menu" name="menu" class="form-control">
+                                    <option value = "0" selected>Choose Menu ...</option>
+                                    <option>Afang ₦500</option>
+                                    <option>Amala ₦110</option>
+                                    <option>Boiled yam ₦300</option>
+                                    <option>Bokoto ₦500</option>
+                                    <option>Bread,tea & egg ₦500</option>
+                                    <option>Cat fish ₦500</option>
+                                    <option>Coco₦ut rice ₦500</option>
+                                    <option>Cow tail ₦500</option>
+                                    <option>Eba ₦110</option>
+                                    <option>Edikiakong ₦600</option>
+                                    <option>Efo riro ₦400</option>
+                                    <option>Egusi  ₦350</option>
+                                    <option>Ewa riro ₦330</option>
+                                    <option>Fish sauce ₦500</option>
+                                    <option>Fresh fish ₦500</option>
+                                    <option>Fried chicken ₦500</option>
+                                    <option>Fried fish ₦400</option>
+                                    <option>Fried panla ₦400</option>
+                                    <option>Fried rice ₦500</option>
+                                    <option>Goat meat  ₦500</option>
+                                    <option>Grilled chicken ₦500</option>
+                                    <option>Hot tea ₦100</option>
+                                    <option>Jollof rice ₦450</option>
+                                    <option>Mixed okro ₦300</option>
+                                    <option>Moimoi  ₦200</option>
+                                    <option>Pap & egg ₦300</option>
+                                    <option>Plain beans ₦220</option>
+                                    <option>Plantain ₦300</option>
+                                    <option>Semo ₦110</option>
+                                    <option>Snail ₦800</option>
+                                    <option>Spaghetti ₦400</option>
+                                    <option>Toasted bread ₦200</option>
+                                    <option>Turkey ₦500</option>
+                                    <option>White rice ₦300</option>
+                                    <option>Yam &egg ₦400</option>
+                                    <option>Yam porridge ₦400</option>
+                                    </select>
+                            </div>
+                            </div>
+                            <div class="col-sm-2">
+                            <input type="number" class="form-control my-1" id="quantity" name="quantity" placeholder="Menu Quantity">
+                            </div>
+                            </div>
+                            <button type="submit" id="submit" name="submit" class="btn btn-primary mt-3 mb-3">Order</button>
+                            </form> 
+                            </div>            
+</body>
+</html>
